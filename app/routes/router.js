@@ -28,9 +28,9 @@ router.post(
     body("telefone")
       .isLength({ min: 11, max: 11 }).withMessage("O telefone deve ter 11 digitos !!"),
       body("assunto")
-      .isLength({ min: 5, max: 30 }).withMessage("O assnto deve conter no minimo 5 digitos e no maximo 30!"),
+      .isLength({ min: 5, max: 30 }).withMessage("O assunto deve conter no minimo 5 digitos e no maximo 30!"),
       body("menssagem")
-      .isLength({ min: 5, max: 500 }).withMessage("O assnto deve conter no minimo 5 digitos e no maximo 500!"),
+      .isLength({ min: 5, max: 500 }).withMessage("A messagem deve conter no minimo 5 digitos e no maximo 500!"),
   ],
   function (req, res) {
     const errors = validationResult(req);

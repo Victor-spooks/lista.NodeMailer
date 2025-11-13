@@ -4,12 +4,39 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./meme.css">
   <title>Atividade Emailer</title>
 </head>
 <body>
   <%
     var cssErro = { nome: "", email: "", telefone: "", assunto: "", menssagem:""};
-    var cssErro = { nome: "", email: "", telefone: "", assunto: "", menssagem:""};
+    var msgErro = { nome: "", email: "", telefone: "", assunto: "", menssagem:""};
+
+    if (listaErros && listaErros.errors) {
+      listaErros.errors.forEach(function(itemErro) {
+        if (itemErro.path == "nome") {
+          cssErro.nome = "erro";
+          msgErro.nome = itemErro.msg;
+        }
+        if (itemErro.path == "email") {
+          cssErro.email = "erro";
+          msgErro.email = itemErro.msg;
+        }
+        if (itemErro.path == "telefone") {
+          cssErro.telefone = "erro";
+          msgErro.telefone = itemErro.msg;
+        }
+        if (itemErro.path == "assunto") {
+          cssErro.assunto = "erro";
+          msgErro.assunto = itemErro.msg;
+        }
+        if (itemErro.path == "menssagem") {
+          cssErro.menssagem = "erro";
+          msgErro.menssagem = itemErro.msg;
+        }
+      });
+    }
+  %>
 
   %>
 
@@ -23,16 +50,16 @@
     <section><%= msgErro.email %></section><br>
 
     <label for="cpf">Telefone:</label><br>
-    <input type="text" name="telefone" id="telefone" value="<%= campos.telefone>">
+    <input type="text" name="telefone" id="telefone" value="<%= campos.telefone %>">
     <section><%= msgErro.telefone %></section><br>
 
     <label for="cep">Assunto:</label><br>
     <input type="text" name="assunto" id="assunto" value="<%= campos.assunto %>">
-    <section><%= msgErro.cep %></section><br>
+    <section><%= msgErro.assunto %></section><br>
 
     <label for="cnpj">Menssagem:</label><br>
     <input type="text" name="menssagem" id="menssagem" value="<%= campos.menssagem %>">
-    <section><%= msgErro.cnpj %></section><br>
+    <section><%= msgErro.menssagem %></section><br>
 
     <button type="submit">Enviar</button>
   </form>
@@ -41,9 +68,9 @@
     <h2>Resultados:</h2>
     <p>Nome: <%= resultado.nome %></p>
     <p>E-mail:<%= resultado.email %></p>
-    <p>CPF: <%= resultado.telefone %></p>
-    <p>CEP: <%= resultado.assunto %></p>
-    <p>CNPJ: <%= resultado.menssagem %></p>
+    <p>Telefone: <%= resultado.telefone %></p>
+    <p>Assunto: <%= resultado.assunto %></p>
+    <p>Menssagem: <%= resultado.menssagem %></p>
   <% } else { %>
   <% } %>
 </body>
