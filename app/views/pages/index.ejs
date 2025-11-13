@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atividade Emailer</title>
+</head>
+<body>
+  <%
+    var cssErro = { nome: "", email: "", telefone: "", assunto: "", menssagem:""};
+    var cssErro = { nome: "", email: "", telefone: "", assunto: "", menssagem:""};
+
+  %>
+
+  <form method="post" action="/index">
+    <label for="nome">Nome:</label><br>
+    <input type="text" name="nome" id="nome" value="<%= campos.nome %>">
+    <section><%= msgErro.nome %></section><br>
+
+    <label for="email">E-mail:</label><br>
+    <input type="text" name="email" id="email" value="<%= campos.email %>">
+    <section><%= msgErro.email %></section><br>
+
+    <label for="cpf">Telefone:</label><br>
+    <input type="text" name="telefone" id="telefone" value="<%= campos.telefone>">
+    <section><%= msgErro.telefone %></section><br>
+
+    <label for="cep">Assunto:</label><br>
+    <input type="text" name="assunto" id="assunto" value="<%= campos.assunto %>">
+    <section><%= msgErro.cep %></section><br>
+
+    <label for="cnpj">Menssagem:</label><br>
+    <input type="text" name="menssagem" id="menssagem" value="<%= campos.menssagem %>">
+    <section><%= msgErro.cnpj %></section><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <% if (resultado) { %>
+    <h2>Resultados:</h2>
+    <p>Nome: <%= resultado.nome %></p>
+    <p>E-mail:<%= resultado.email %></p>
+    <p>CPF: <%= resultado.telefone %></p>
+    <p>CEP: <%= resultado.assunto %></p>
+    <p>CNPJ: <%= resultado.menssagem %></p>
+  <% } else { %>
+  <% } %>
+</body>
+</html>
