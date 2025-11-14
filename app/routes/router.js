@@ -56,7 +56,7 @@ router.post(
     }
 
     const mailOptions = {
-      from: "rm94717@estudante.fieb.edu.br",
+      from: "cvictor7n@gmail.com",
       to: "cvictor7n@gmail.com",
       subject: "assunto",
       text: "menssagem em formatos texto",
