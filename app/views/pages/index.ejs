@@ -49,15 +49,15 @@
     <input type="text" name="email" id="email" value="<%= campos.email %>">
     <section><%= msgErro.email %></section><br>
 
-    <label for="cpf">Telefone:</label><br>
+    <label for="telefone">Telefone:</label><br>
     <input type="text" name="telefone" id="telefone" value="<%= campos.telefone %>">
     <section><%= msgErro.telefone %></section><br>
 
-    <label for="cep">Assunto:</label><br>
+    <label for="assunto">Assunto:</label><br>
     <input type="text" name="assunto" id="assunto" value="<%= campos.assunto %>">
     <section><%= msgErro.assunto %></section><br>
 
-    <label for="cnpj">Menssagem:</label><br>
+    <label for="menssagem">Menssagem:</label><br>
     <input type="text" name="menssagem" id="menssagem" value="<%= campos.menssagem %>">
     <section><%= msgErro.menssagem %></section><br>
 
@@ -66,10 +66,10 @@
 
   <% if (resultado) { %>
     <h2>Resultados:</h2>
-    <p>Nome: <%= resultado.nome %></p>
-    <p>E-mail:<%= resultado.email %></p>
-    <p>Telefone: <%= resultado.telefone %></p>
-    <p>Assunto: <%= resultado.assunto %></p>
+    <p>Nome: <%= resultado.nome %></p><br>
+    <p>E-mail:<%= resultado.email %></p><br>
+    <p>Telefone: <%= resultado.telefone %></p><br>
+    <p>Assunto: <%= resultado.assunto %></p><br>
     <p>Menssagem: <%= resultado.menssagem %></p>
   <% } else { %>
   <% } %>
