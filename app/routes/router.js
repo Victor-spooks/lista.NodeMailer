@@ -59,7 +59,7 @@ router.post(
       from: "cvictor7n@gmail.com",
       to: "cvictor7n@gmail.com",
       subject: "assunto",
-      text: "menssagem em formatos texto",
+      text: Menssagem,
       html: "<h1>menssagem em formato HTML</h1>"
     };
     transporter.sendMail(mailOptions, (error, info) => {
