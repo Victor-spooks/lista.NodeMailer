@@ -56,12 +56,18 @@ router.post(
     }
 
     const mailOptions = {
-      from: "cvictor7n@gmail.com",
-      to: "cvictor7n@gmail.com",
-      subject: "assunto",
-      text: "menssagem em formatos texto",
-      html: "<h1>menssagem em formato HTML</h1>"
-    };
+  from: '"Site Contato" <cvictor7n@gmail.com>',
+  to: "cvictor7n@gmail.com",
+  subject: req.body.assunto,
+  html: `
+    <h1>Nova mensagem do formulário</h1>
+    <p><strong>Nome:</strong> ${req.body.nome}</p>
+    <p><strong>Email:</strong> ${req.body.email}</p>
+    <p><strong>Telefone:</strong> ${req.body.telefone}</p>
+    <p><strong>Assunto:</strong> ${req.body.assunto}</p>
+    <p><strong>Mensagem:</strong><br>${req.body.menssagem}</p>
+  `
+};
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         comsole.log(error)
